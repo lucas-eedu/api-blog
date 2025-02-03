@@ -6,7 +6,6 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "rootDirs": ["./src"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
@@ -24,10 +23,20 @@
     "target": "es2021",
     "outDir": ".build",
     "lib": ["es2021"],
-    "rootDir": "./",
-    "baseUrl": "./"
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "paths": {
+      "@models/*": ["app/models/*"],
+      "@config/*": ["app/config/*"],
+      "@services/*": ["app/services/*"],
+      "@controllers/*": ["app/controllers/*"],
+      "@routes/*": ["app/routes/*"],
+      "@middlewares/*": ["app/middlewares/*"],
+      "@exceptions/*": ["app/exceptions/*"],
+      "@validators/*": ["app/validators/*"],
+      "@interfaces/*": ["app/interfaces/*"]
+    }
   },
-
-  "include": ["src/api/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
